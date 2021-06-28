@@ -1,0 +1,104 @@
+#set-extensions-div {
+	width: 600px;
+	height: 400px;
+}
+
+
+#fix-extensions-div {
+	width: 100%;
+	height: 36px;
+}
+
+#custom-extensions-div {
+	width: 100%;
+	height: 364px;
+}
+
+div.extensions-setting-title-div {
+	width: 20%;
+    height: 100%;
+    float: left;
+    padding-left: 5px;
+    padding-top: 9px;
+    font-weight: 700;
+    color: gray;
+}
+
+div.extensions-setting-choose-div {
+	width: 80%;
+	display: inline-block;
+	height: 100%;
+}
+
+div.fix-check-div {
+	padding-left: 5px;
+    padding-top: 9px;
+    display: inline-block;
+}
+
+#custom-add-btn {
+	border-radius: 8px;
+    font-size: 12px;
+    height: 24px;
+    width: 50px;
+    color: white;
+    background: #808080ba;
+    border: 1px solid #808080ba;
+}
+
+#custom-add-input {
+	width: 70%;
+	border-radius: 5px;
+	height: 100%;
+	padding-left: 6px;
+}
+
+#custom-info-div {
+	color: gray;
+    height: 22px;
+    padding-left: 10px;
+    padding-top: 2px;
+}
+
+#custom-selected-div {
+	height: calc(100% - 22px);
+}
+
+button.custom-btn {
+	padding: 0;
+    position: relative;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding-left: 3px;
+    background: white;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+button.custom-btn:hover {
+	cursor: default;
+}
+
+span.custom-name-span {
+	padding-right: 20px;
+}
+span.custom-name-span-remove {
+	font-size: 20px;
+    position: absolute;
+    right: 2px;
+    top: -5px;
+}
+
+span.custom-name-span-remove:hover {
+	cursor: pointer;
+}
+
+.custom-add-btn-toggle {
+	background: #337ab7 !important
+}
+
+
+input.fixed-extension-checkbox:hover {
+	cursor: pointer;
+}
