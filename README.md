@@ -13,7 +13,7 @@
 ### 실행방법
 ```
 1. IDE 이용시 :  해당 프로젝트를 import 후에 main 함수( BlockFileExtensionsApplication.java ) 실행
-   ( 그 외 : 폴더 block-file-extensions에서 mvn clean 후 target 폴더의 block-file-extensions-1.0.jar 실행 )
+   ( 그 외 : 폴더 block-file-extensions에서 mvn install 후 target 폴더의 block-file-extensions-1.0.jar 실행(java -jar 이용)  )
 ```
 
 ### db관련 정보
