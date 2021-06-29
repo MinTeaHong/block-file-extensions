@@ -31,15 +31,19 @@ public class FileService {
 	
 	
 	
-	private final int CUSTOM_EXTENSIONS_MAX;
+	private final int CUSTOM_EXTENSIONS_MAX_SIZE;
+	private final int CUSTOM_EXTENSIONS_MAX_LENGTH;
 	
 	@Autowired
 	public FileService( FixedExtensionsRepository rixedExtensionsRepository 
 			, CustomExtensionsRepository customExtensionsRepository
-			, @Value("${customExtensionsMax}") int customExtensionsMax ) {
+			, @Value("${customExtensionsMaxSize}") int customExtensionsMaxSize
+			, @Value("${customExtensionsMaxLength}") int customExtensionsMaxLength
+			) {
 		this.rixedExtensionsRepository 		= rixedExtensionsRepository;
 		this.customExtensionsRepository 	= customExtensionsRepository;
-		this.CUSTOM_EXTENSIONS_MAX 			= customExtensionsMax;
+		this.CUSTOM_EXTENSIONS_MAX_SIZE 	= customExtensionsMaxSize;
+		this.CUSTOM_EXTENSIONS_MAX_LENGTH 	= customExtensionsMaxLength;
 	}
 	
 	private final Object 		fixedExtensionsKey 		= new Object();
@@ -47,7 +51,7 @@ public class FileService {
 	private final Gson 			gson 					= new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 	
 	public int getCustomExtensionsMax() {
-		return CUSTOM_EXTENSIONS_MAX;
+		return CUSTOM_EXTENSIONS_MAX_SIZE;
 	}
 	
 	@Transactional
@@ -80,7 +84,7 @@ public class FileService {
 		
 		synchronized ( customExtensionsKey ) {
 			
-			if ( CustomExtensionsRepository.customExtensions.size() == 200 ) {
+			if ( CustomExtensionsRepository.customExtensions.size() == CUSTOM_EXTENSIONS_MAX_SIZE ) {
 				message 		= CUSTOM_FULL_SIZE;
 				httpStatus 		= HttpStatus.PAYLOAD_TOO_LARGE;
 			} else if ( CustomExtensionsRepository.customExtensions.containsKey( name ) ) {
@@ -130,7 +134,7 @@ public class FileService {
 	}
 	
 	public boolean checkCustomExtensions( String name ) {
-		if ( name.length() <= 20 && Pattern.matches( CECHK_CUSTOM_PATTERN , name)  ) return true;
+		if ( name.length() <= CUSTOM_EXTENSIONS_MAX_LENGTH && Pattern.matches( CECHK_CUSTOM_PATTERN , name)  ) return true;
 		else return false;
 	}
 	
