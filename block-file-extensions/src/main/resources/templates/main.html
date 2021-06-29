@@ -22,8 +22,8 @@
 					커스텀 확장자
 				</div>
 				<div class="extensions-setting-choose-div">
-					<div style="height: 41px;padding-top: 5px;padding-bottom: 5px;">
-						<input id="custom-add-input"  placeholder="확장자입력" maxlength="20">
+					<div style="height: 41px;padding-top: 5px;padding-bottom: 5px;">  
+						<input id="custom-add-input"  placeholder="확장자입력"  th:maxlength="*{customExtensionsLength}"  >
 						<button id="custom-add-btn"> +추가</button>
 					</div>
 					<div style="min-height: calc(100% - 41px);border: 1px solid black; border-radius: 10px;" >

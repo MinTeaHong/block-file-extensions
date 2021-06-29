@@ -53,6 +53,9 @@ public class FileService {
 	public int getCustomExtensionsMax() {
 		return CUSTOM_EXTENSIONS_MAX_SIZE;
 	}
+	public int getCustomExtensionsLength() {
+		return CUSTOM_EXTENSIONS_MAX_LENGTH;
+	}
 	
 	@Transactional
 	public ResponseEntity<ApiMessage> changeFixedExtensionsFlagById( String name , boolean use_yn ) {

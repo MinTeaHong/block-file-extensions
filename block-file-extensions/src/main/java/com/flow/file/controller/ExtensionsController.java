@@ -40,6 +40,7 @@ public class ExtensionsController {
 		model.addAttribute("fixedExtensions", gson.toJson( FixedExtensionsRepository.fixedExtensionsList  ) );
 		model.addAttribute("customExtensions", gson.toJson( new ArrayList<CustomExtensions>(  CustomExtensionsRepository.customExtensions.values() ) ) );
 		model.addAttribute("customExtensionsMax", fileService.getCustomExtensionsMax()  );
+		model.addAttribute("customExtensionsLength", fileService.getCustomExtensionsLength()  );
 		
 		return "main";
 		
